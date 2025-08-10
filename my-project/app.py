@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request
-
+# Some change of mind is always applicable
 """
 It creates an instance of Flask class, 
 which will be your WSGL (Web Server Gateway interface) application
