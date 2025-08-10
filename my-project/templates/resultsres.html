@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <h2>Final Results: </h2>
+       {#  I am Multi-line comment   
+        {% if results.items >50 %}
+        <h1>You're passed</h1>
+        {% else %}
+        <h1>You're failed</h1>
+        {% endif %}
+        <table border=2>
+                    <tr>
+            <th>key</th>
+            <th>Value</th>
+         </tr>
+         {% for key,value in results.items() %}
+         <tr>
+            <td>{{key}}</td>
+            <td>{{value}}</td>
+         </tr> #}
+         
+         <ul>
+        {% for key, value in results.items() %}
+            {% if key == 'score' and value >= 90 %}
+                <li><strong>{{ key }}:</strong> Excellent score! ({{ value }})</li>
+            {% elif key == 'score' and value >= 75 %}
+                <li><strong>{{ key }}:</strong> Good score! ({{ value }})</li>
+            {% elif key == 'status' and value == 'success' %}
+                <li><strong>{{ key }}:</strong> ✅ Operation was successful!</li>
+            {% else %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endif %}
+        {% endfor %}
+</ul>
+    </body>
+</html>
